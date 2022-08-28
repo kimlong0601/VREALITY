@@ -1,0 +1,925 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+button, input {
+  outline: none;
+  border: none;
+}
+
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  background: #101315;
+}
+
+.container {
+  max-width: 1260px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 120px;
+  width: 100%;
+  z-index: 99999;
+  transition: 0.5s ease;
+}
+.header.shrink {
+  height: 80px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #1F1F22;
+  transition: 0.5s ease;
+}
+.header.shrink nav {
+  padding: 15px;
+  transition: 0.5s ease;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  color: #fff;
+  padding-top: 50px;
+  font-size: 15px;
+}
+@media only screen and (max-width: 1024px) {
+  .header nav {
+    padding: 10px;
+  }
+}
+.header nav .menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 0 50px;
+}
+@media only screen and (max-width: 1024px) {
+  .header nav .menu {
+    background-color: #1F1F22;
+    flex-direction: column;
+    width: 50%;
+    height: 80vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    gap: 50px 0;
+    z-index: 100;
+    transform: translateX(200%);
+    transition: transform 0.6s ease;
+  }
+  .header nav .menu.active {
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+  }
+  .header nav .menu .menu-item:hover {
+    transition: 0.3s;
+  }
+}
+.header nav .menu .menu_close {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .header nav .menu .menu_close {
+    display: block;
+    font-size: 20px;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+  }
+}
+.header nav .menu .menu-item {
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.header nav .menu .menu-item .menu-link:hover {
+  cursor: pointer;
+}
+.header nav .menu .menu-item:hover {
+  color: #E32966;
+  transition: 0.3s ease;
+}
+.header nav .booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 25px;
+}
+@media only screen and (max-width: 1024px) {
+  .header nav .booking p {
+    display: none;
+  }
+}
+.header nav .booking button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 40px;
+  border: 1px solid #fff;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  position: relative;
+  background: none;
+  overflow: hidden;
+  color: #fff;
+}
+@media only screen and (max-width: 1024px) {
+  .header nav .booking button {
+    width: 120px;
+  }
+}
+.header nav .booking button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  background-color: #E32966;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+.header nav .booking button:hover::before {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+.header nav .booking button:hover {
+  cursor: pointer;
+  border: 1px solid #E32966;
+  box-shadow: #E32966 0px 5px 15px;
+}
+.header nav .booking p {
+  font-weight: 600;
+}
+.header nav .menu_toggle {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  .header nav .menu_toggle {
+    display: block;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .header {
+    height: 80px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #1F1F22;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #1F1F22;
+  }
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background-image: url(/Landing_page_3/assets/images/footer_bg.png);
+  background-size: 100% 100%;
+  overflow: hidden;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 1024px) {
+  .footer {
+    height: auto;
+  }
+}
+.footer .footer-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 55px;
+  color: #fff;
+}
+.footer .footer-content__logo {
+  height: 100%;
+  width: 100px;
+}
+.footer .footer-content__logo img {
+  width: 100%;
+  height: 100%;
+}
+.footer .footer-content__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 50px;
+}
+.footer .footer-content__menu li {
+  font-size: 15px;
+  font-weight: 600;
+}
+.footer .footer-content__menu li:hover {
+  color: #E32966;
+}
+.footer .footer-content__policy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer-content__policy a {
+  margin-right: 15px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #C7C7C7;
+}
+.footer .footer-content__policy a:hover {
+  color: #fff;
+}
+@media only screen and (max-width: 1024px) {
+  .footer .footer-content {
+    padding-bottom: 10px;
+  }
+  .footer .footer-content__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+  }
+  .footer .footer-content__policy {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer .footer-content {
+    flex-direction: column;
+  }
+  .footer .footer-content__logo {
+    padding-top: 50px;
+  }
+  .footer .footer-content__menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    margin: 50px 0;
+  }
+  .footer .footer-content__policy {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+  }
+}
+
+.hero {
+  position: relative;
+  background-image: url(/Landing_page_3/assets/images/hero_banner.png);
+  width: 100%;
+  height: 100vh;
+  max-height: 920px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.hero .hero-content {
+  width: 500px;
+  height: 600px;
+  position: absolute;
+  top: 25%;
+  color: #fff;
+}
+.hero .hero-content__title h1 {
+  font-family: "Dela Gothic One", cursive;
+  font-size: 48px;
+}
+.hero .hero-content__details {
+  margin: 50px 0;
+}
+.hero .hero-content__btn .btn-1, .hero .hero-content__btn .btn-2 {
+  width: 163px;
+  height: 48px;
+  color: #fff;
+  border-radius: 25px;
+  border: 1px solid #E32966;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.hero .hero-content__btn .btn-1:hover, .hero .hero-content__btn .btn-2:hover {
+  cursor: pointer;
+  box-shadow: #E32966 0px 5px 15px;
+}
+.hero .hero-content__btn .btn-1 {
+  background-color: #E32966;
+  margin-right: 25px;
+  box-shadow: #E32966 0px 5px 15px;
+}
+.hero .hero-content__btn .btn-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  transition: 0.5s;
+}
+.hero .hero-content__btn .btn-1:hover::before {
+  left: 100%;
+}
+.hero .hero-content__btn .btn-2 {
+  background: none;
+}
+.hero .hero-content__btn .btn-2::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  background-color: #E32966;
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+.hero .hero-content__btn .btn-2:hover::before {
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+@media only screen and (max-width: 600px) {
+  .hero .hero-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    left: 0;
+    top: 0;
+    margin-top: 200px;
+  }
+  .hero .hero-content__title h1 {
+    font-family: "Dela Gothic One", cursive;
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .hero {
+    height: 700px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .hero {
+    height: 600px;
+  }
+}
+
+.about {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 100px;
+}
+.about .about-title {
+  margin-bottom: 50px;
+}
+@media only screen and (max-width: 1024px) {
+  .about .about-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+.about .about-title h1 {
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+  color: #fff;
+  text-transform: uppercase;
+}
+.about .about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about .about-content__image {
+  width: 800px;
+  height: 500px;
+  margin-right: 30px;
+  position: relative;
+  padding-top: 5px;
+  overflow: hidden;
+}
+.about .about-content__image #border-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  border-left: 6px solid #E32966;
+  border-top: 6px solid #E32966;
+}
+.about .about-content__image #border-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  border-right: 6px solid #E32966;
+  border-top: 6px solid #E32966;
+}
+.about .about-content__image #border-3 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  border-left: 6px solid #E32966;
+  border-bottom: 6px solid #E32966;
+}
+.about .about-content__image #border-4 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  border-right: 6px solid #E32966;
+  border-bottom: 6px solid #E32966;
+}
+.about .about-content__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  z-index: -1;
+}
+.about .about-content__details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+}
+.about .about-content__details h1 {
+  margin-bottom: 5px;
+}
+.about .about-content__details p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1024px) {
+  .about .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .about .about-content__image {
+    width: 100%;
+    margin-top: 30px;
+    margin: 10px auto;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .about .about-content__image {
+    width: 100%;
+    height: 400px;
+    margin: 10px auto;
+  }
+}
+
+.services {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100px;
+}
+.services .services-title {
+  margin-bottom: 50px;
+}
+.services .services-title h1 {
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+  color: #fff;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1024px) {
+  .services .services-title {
+    width: 100%;
+    text-align: center;
+  }
+}
+.services .services-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.services .services-content__box {
+  position: relative;
+  width: 380px;
+  height: 450px;
+  margin-right: 30px;
+  margin-bottom: 20px;
+  background-image: url(/Landing_page_3/assets/images/bg.png);
+  background-repeat: no-repeat;
+}
+.services .services-content__box .box-border_1 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  border-top: 4px solid #E32966;
+  border-left: 4px solid #E32966;
+}
+.services .services-content__box .box-border_2 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0;
+  right: 0;
+  border-top: 4px solid #E32966;
+  border-right: 4px solid #E32966;
+}
+.services .services-content__box .box-border_3 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 4px solid #E32966;
+  border-left: 4px solid #E32966;
+}
+.services .services-content__box .box-border_4 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  bottom: 0;
+  right: 0;
+  border-bottom: 4px solid #E32966;
+  border-right: 4px solid #E32966;
+}
+.services .services-content__box .box-image {
+  width: 100%;
+  height: 210px;
+}
+.services .services-content__box .box-image img {
+  width: 100%;
+  height: 100%;
+}
+.services .services-content__box .box-details {
+  width: 100%;
+  padding: 40px 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+.services .services-content__box .box-details span {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.services .services-content__box .box-details p {
+  height: 71.17px;
+  margin-top: 10px;
+}
+.services .services-content__box .box-details button {
+  position: relative;
+  width: 170px;
+  height: 47px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #E32966;
+  border-radius: 25px;
+  box-shadow: #E32966 0px 5px 15px;
+  border: none;
+  margin-top: 15px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.services .services-content__box .box-details button:hover {
+  cursor: pointer;
+}
+.services .services-content__box .box-details button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  transition: 0.5s;
+}
+.services .services-content__box .box-details button:hover::before {
+  left: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .services .services-content {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services .services-content__box {
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .services .services-content {
+    grid-template-columns: 1fr;
+  }
+  .services .services-content__box {
+    width: 100%;
+    height: auto;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+}
+
+.games {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+.games-title {
+  margin-bottom: 50px;
+}
+.games-title h1 {
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+  color: #fff;
+}
+.games .swiper {
+  width: 100%;
+  height: 100%;
+}
+.games .swiper .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+}
+.games .swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.prices {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+.prices .prices-title {
+  margin-bottom: 50px;
+}
+.prices .prices-title h1 {
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+  color: #fff;
+}
+.prices .price-table {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.prices .price-table thead tr {
+  background-color: #1F1F22;
+  height: 120px;
+}
+.prices .price-table tbody tr {
+  background-color: #696969;
+  height: 90px;
+}
+
+.gallery {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 100px;
+}
+.gallery .gallery-title {
+  margin-bottom: 50px;
+}
+.gallery .gallery-title h1 {
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+  color: #fff;
+}
+.gallery .gallery-content {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url(/Landing_page_3/assets/images/gallery.png);
+  background-size: 100% 100%;
+  padding: 15px 0;
+}
+.gallery .gallery-content__box {
+  width: 440px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 70px 80px;
+  color: #fff;
+  background-image: url(/Landing_page_3/assets/images/bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.gallery .gallery-content__box .box-border_1 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  border-top: 4px solid #E32966;
+  border-left: 4px solid #E32966;
+}
+.gallery .gallery-content__box .box-border_2 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 0;
+  right: 0;
+  border-top: 4px solid #E32966;
+  border-right: 4px solid #E32966;
+}
+.gallery .gallery-content__box .box-border_3 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 4px solid #E32966;
+  border-left: 4px solid #E32966;
+}
+.gallery .gallery-content__box .box-border_4 {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  bottom: 0;
+  right: 0;
+  border-bottom: 4px solid #E32966;
+  border-right: 4px solid #E32966;
+}
+.gallery .gallery-content__box #title {
+  height: 50px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.gallery .gallery-content__box #info {
+  height: 280px;
+  margin: 20px 0;
+  font-size: 18px;
+}
+.gallery .gallery-content__box .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 40px;
+  font-size: 24px;
+}
+.gallery .gallery-content__box .button-container i:hover {
+  color: #E32966;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .gallery .gallery-content__box {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 30px;
+  }
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 1024px) {
+  .contact {
+    height: auto;
+  }
+}
+.contact .contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact .contact-content__details {
+  width: 250px;
+  color: #fff;
+}
+.contact .contact-content__details h1 {
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+}
+.contact .contact-content__details .detail-box {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 12px 0;
+}
+.contact .contact-content__details .detail-box h4 {
+  font-family: "Dela Gothic One", cursive;
+  font-size: 24px;
+}
+.contact .contact-content__details .detail-box p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+.contact .contact-content__details .detail-box .icon i {
+  margin-right: 10px;
+  transition: 0.5s ease;
+}
+.contact .contact-content__details .detail-box .icon i:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+.contact .contact-content__map {
+  width: 950px;
+  height: 100%;
+}
+.contact .contact-content__map img {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .contact .contact-content {
+    grid-template-columns: 1fr;
+  }
+  .contact .contact-content__details {
+    width: 100%;
+  }
+  .contact .contact-content__map {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.scrollTop {
+  position: fixed;
+  right: 5%;
+  bottom: 6%;
+  z-index: 100;
+}
+.scrollTop #scrollTop-btn {
+  width: 50px;
+  height: 50px;
+  background-color: #E32966;
+  border-radius: 50px;
+  transition: transform 0.4s ease;
+  box-shadow: #E32966 0px 5px 15px;
+}
+.scrollTop #scrollTop-btn i {
+  font-size: 20px;
+  color: #fff;
+}
+.scrollTop #scrollTop-btn:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}/*# sourceMappingURL=index.css.map */

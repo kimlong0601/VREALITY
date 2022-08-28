@@ -1,0 +1,33 @@
+.prices{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    margin-top: 100px;
+    .prices-title{
+        margin-bottom: 50px;
+        h1{
+            font-size: $font-heading-size;
+            font-family: $heading-font;
+            color: $main-text;
+        }
+    }
+    .price-table{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: $main-text;
+        thead{
+            tr{
+                background-color: $tablet-top;
+                height: 120px;
+            }
+        }
+        tbody{
+            tr{
+                background-color: $tablet-body;
+                height: 90px;
+            }
+        }
+    }
+}

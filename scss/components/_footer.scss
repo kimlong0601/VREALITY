@@ -1,0 +1,84 @@
+.footer{
+    position: relative;
+    width: 100%;
+    height: 120px;
+    background-image: url(/Landing_page_3/assets/images/footer_bg.png);
+    background-size: 100% 100%;
+    overflow: hidden;
+    margin-top: 100px;
+    @include tablet{
+        height: auto;
+    }
+    .footer-content{
+        width: 100%;
+        height: 100%;
+        @include flex(center,space-between);
+        padding-top: 55px;
+        color: $main-text;
+        &__logo{
+            height: 100%;
+            width: 100px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__menu{
+            @include flex(center,space-between);
+            gap: 0 50px;
+            li{
+                font-size: $font-s;
+                font-weight: 600;
+            }
+            li:hover{
+                color: $main-color;
+            }
+        }
+        &__policy{
+            @include flex(center,space-between);
+            a{
+                margin-right: 15px;
+                font-size: $font-s;
+                font-weight: 400;
+                color: $footer_secondary;
+            }
+            a:hover{
+                color: $main-text;
+
+            }
+        }
+
+        @include tablet{
+            padding-bottom: 10px;
+            &__menu{
+                display: flex;
+                flex-direction: column;
+                gap: 25px 0;
+            }
+            &__policy{
+                display: flex;
+                flex-direction: column;
+                gap: 25px 0;
+            }
+        }
+        @include mobile{
+            flex-direction: column;
+            &__logo{
+                padding-top: 50px;
+            }
+            &__menu{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 25px 0;
+                margin: 50px 0;
+            }
+            &__policy{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 25px 0;
+            }
+        }
+    }
+}

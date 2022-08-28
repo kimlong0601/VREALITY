@@ -1,0 +1,105 @@
+.hero{
+    position: relative;
+    background-image: url(/Landing_page_3/assets/images/hero_banner.png);
+    width: 100%;
+    height: 100vh;
+    max-height: 920px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .hero-content{
+        width: 500px;
+        height: 600px;
+        position: absolute;
+        top: 25%;
+        color: $main-text;
+        &__title{
+            h1{    
+                font-family: $heading-font;
+                font-size: 48px;
+            }
+        }
+        &__details{
+            margin: 50px 0;
+        }
+        &__btn{
+            .btn-1, .btn-2{
+                width: $btn-sm;
+                height: 48px;
+                color: $main-text;
+                border-radius: 25px;
+                border: 1px solid $main-color;
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+            }
+            .btn-1:hover, .btn-2:hover{
+                cursor: pointer;
+                box-shadow: $box_main-shadow;
+            }
+            .btn-1{
+                background-color: $main-color;
+                margin-right: 25px;
+                box-shadow: $box_main-shadow;
+            }
+            .btn-1::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, #fff, transparent);
+                transition: 0.5s;
+            }
+            .btn-1:hover::before{
+                left: 100%;
+            }
+            .btn-2{
+                background: none;
+            }
+            .btn-2::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                transform: translateY(100%);
+                background-color: $main-color;
+                transition: transform 0.3s ease;
+                z-index: -1;
+            }
+            .btn-2:hover::before{
+                transform: translateY(0);
+                transition: transform 0.3s ease;
+            }
+        }
+
+        @include mobile{
+            display:  flex;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            left: 0;
+            top: 0;
+            margin-top: 200px;
+            &__title{
+                h1{    
+                    font-family: $heading-font;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    @include tablet{
+        height: 700px;
+    }
+    @include mobile{
+        height: 600px;
+    }
+}

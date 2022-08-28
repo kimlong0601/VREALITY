@@ -1,0 +1,23 @@
+.scrollTop{
+    position: fixed;
+    right: 5%;
+    bottom: 6%;
+    z-index: 100;
+    #scrollTop-btn{
+        width: 50px;
+        height: 50px;
+        background-color: $main-color;
+        border-radius: 50px;
+        transition: transform 0.4s ease;
+        box-shadow: $box_main-shadow;
+        i{
+            font-size: $font-m;
+            color: $main-text;
+        }
+    }
+    #scrollTop-btn:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+        transition: transform 0.4s ease;
+    }
+}
