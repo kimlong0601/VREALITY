@@ -136,7 +136,9 @@ const sr = ScrollReveal({
 })
 //
 //home 
-
+sr.reveal(`.hero-content__title`)
+sr.reveal(`.hero-content__details`)
+sr.reveal(`.hero-content__btn`, {delay: 400, origin: 'bottom'})
 //about
 sr.reveal(`.about-title`, {origin: 'left'})
 sr.reveal(`.about-content__image`, {origin: 'left', delay: 400})
