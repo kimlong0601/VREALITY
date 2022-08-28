@@ -135,6 +135,9 @@ const sr = ScrollReveal({
     delay: 300,
 })
 //
+sr.reveal(`.logo`)
+sr.reveal(`.menu-link`, {interval: 200})
+sr.reveal(`.booking`,{delay: 400})
 //home 
 sr.reveal(`.hero-content__title`)
 sr.reveal(`.hero-content__details`)
