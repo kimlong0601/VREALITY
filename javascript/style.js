@@ -136,35 +136,35 @@ const sr = ScrollReveal({
 })
 //
 sr.reveal(`.logo`)
-sr.reveal(`.menu-link`, {interval: 300})
-sr.reveal(`.booking`,{delay: 500})
+sr.reveal(`.menu-link`, {interval: 200})
+sr.reveal(`.booking`,{delay: 400})
 //home 
 sr.reveal(`.hero-content__title`)
 sr.reveal(`.hero-content__details`)
-sr.reveal(`.hero-content__btn`, {delay: 500, origin: 'bottom'})
+sr.reveal(`.hero-content__btn`, {delay: 400, origin: 'bottom'})
 //about
 sr.reveal(`.about-title`, {origin: 'left'})
-sr.reveal(`.about-content__image`, {origin: 'left', delay: 500})
-sr.reveal(`.about-content__details`, {delay: 700})
+sr.reveal(`.about-content__image`, {origin: 'left', delay: 400})
+sr.reveal(`.about-content__details`, {delay: 600})
 //services
 sr.reveal(`.services-title`, {origin: 'left'})
-sr.reveal(`.services-content__box`, {delay: 500, interval: 300})
+sr.reveal(`.services-content__box`, {delay: 400, interval: 200})
 //games
 sr.reveal(`.games-title`, {origin: 'left'})
-sr.reveal(`.swiper`, {delay: 500, origin: 'bottom'})
+sr.reveal(`.swiper`, {delay: 400, origin: 'bottom'})
 //prices
 sr.reveal(`.prices-title`, {origin: 'left'})
-sr.reveal(`thead`, {delay: 500})
-sr.reveal(`tbody`, {delay: 1500})
+sr.reveal(`thead`, {delay: 400})
+sr.reveal(`tbody`, {delay: 1000})
 //gallery
 sr.reveal(`.gallery-title`, {origin: 'left'})
-sr.reveal(`.gallery-content`, {delay: 500, origin: 'top'})
-sr.reveal(`.gallery-content__box`, {delay: 700, origin: 'right'})
+sr.reveal(`.gallery-content`, {delay: 400, origin: 'top'})
+sr.reveal(`.gallery-content__box`, {delay: 500, origin: 'right'})
 //contact
 sr.reveal(`.contact-content__details`, {origin: 'left'})
-sr.reveal(`.contact-content__map`, {delay: 500, origin: 'right'})
+sr.reveal(`.contact-content__map`, {delay: 400, origin: 'right'})
 //footer
 sr.reveal(`.footer-content__logo`, {origin: 'bottom'})
-sr.reveal(`.footer-content__menu li`, {delay: 500, origin: 'bottom', interval: 300})
-sr.reveal(`.footer-content__policy a`, {delay: 700, origin: 'bottom', interval: 300})
+sr.reveal(`.footer-content__menu li`, {delay: 400, origin: 'bottom', interval: 200})
+sr.reveal(`.footer-content__policy a`, {delay: 500, origin: 'bottom', interval: 200})
 //End scroll reveal
